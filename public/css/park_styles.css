@@ -1,0 +1,160 @@
+/* PARKPAGE STYLES */
+
+#parkImageBox{
+
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 1em;
+    overflow:auto;
+}
+
+#parkImage{
+    border-radius: 5px;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+    display: none;
+}
+
+#parkCoords{
+
+    display: none;
+
+}
+
+#invisMap{
+
+    display: none;
+
+}
+
+
+#legend{
+
+    text-align: center;
+    max-width: 750px;
+    width: 100%;
+    margin: 0 auto;
+
+}
+
+
+#legendBox{
+
+    align-items: center;
+    margin-right: 1em;
+    margin-top: 1em;
+
+}
+
+
+#legendImage{
+
+    align-self: center;
+
+}
+
+
+#legendText{
+
+    margin-left:.5em;
+    font-weight: bold;
+    
+} 
+
+
+#legend .flexContainer{
+
+    justify-content: flex-end;
+
+}
+
+
+#unavailableMessage{
+
+    text-align: center;
+    font-size: 30px;
+    
+}
+
+
+.landName{
+
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 28px;
+    margin: 1em 0;
+    text-align: center;
+
+}
+
+
+.landList{
+
+    max-width: 40em;
+    margin: 0 auto;
+
+}
+
+
+.rideList{
+
+    max-width: 750px;
+    margin: 0 auto;
+    font-size: 20px;
+
+}
+
+
+.landGroup + .landGroup {
+
+    margin-top: 3em;
+
+}
+
+
+.rideInfo{
+
+    border: 3px solid #A60520;
+    padding: 1em;
+    border-radius: 10px;
+    margin: 1em;
+
+}
+
+
+.rideInfo + .rideInfo {
+
+    margin-top: 2em;
+
+}
+
+
+.rideName{
+
+    margin-bottom: .75em;
+    text-decoration: underline;
+
+}
+
+
+.waitLabel{
+
+    margin-top: .75em;
+
+}
+
+
+.waitTime{
+
+    font-weight: bold;
+
+}
+
+
+.closed{
+
+    color: #EF233C;
+    font-weight: bold;
+
+}

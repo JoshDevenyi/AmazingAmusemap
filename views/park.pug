@@ -1,0 +1,53 @@
+extends layout_park
+
+block layoutContent
+    div.content
+        h1.pageHeading#parkHeading #{park.name}
+        p#parkCoords {"lat": #{park.latitude}, "lng": #{park.longitude} }
+        div#invisMap
+        div#parkImageBox
+            img(src="/images/GenericPark.jpg", alt=`${park.name} Image`)#parkImage
+        script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzqdgKT_wNUIuzPuj699H7BwB4t5Qst1M&libraries=places&callback=initMap" async)
+        div#legend
+            div.flexContainer#legendBox
+                img(src="/images/stickman.png" alt="a grey stickman walking towards the left" width="25" )#legendImage
+                p#legendText 5 Minutes
+        div#attractionList
+            if hasLands
+                ul.landList
+                    each land in attractions.lands
+                            li.landGroup
+                                p.landName #{land.name}
+                                    ul.rideList
+                                        each ride in land.rides
+                                            li.rideInfo 
+                                                strong
+                                                    p.rideName #{ride.name}
+                                                if ride.is_open  
+                                                    div.waitLine
+                                                    p.waitLabel Wait Time: 
+                                                        span.waitTime #{ride.wait_time} Minutes
+                                                else
+                                                    p.waitLabel Wait Time: 
+                                                        span.closed CLOSED
+            else if hasRides
+                ul.rideList
+                    each ride in attractions.rides
+                        li.rideInfo 
+                            strong
+                                p.rideName #{ride.name}
+                            if ride.is_open  
+                                div.waitLine
+                                p.waitLabel Wait Time: 
+                                    span.waitTime #{ride.wait_time} Minutes
+                                
+                            else
+                                p.waitLabel Wait Time: 
+                                    span.closed CLOSED
+            else
+                p#unavailableMessage NO WAIT TIMES AVAILABLE
+                
+    div.pageLink.flexContainer
+        a(href="#parkHeading").backLink Back to Top
+        a(href="/parks").backLink Back to List
+        a(href="/").backLink Back to Map

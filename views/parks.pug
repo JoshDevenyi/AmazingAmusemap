@@ -1,0 +1,99 @@
+extends layout
+
+block layoutContent
+    div.content#parksContent
+        h1.pageHeading#listHeading List of Amusement Parks
+        div#parksBox.flexContainer
+            aside#leftParksCol
+                div.flexContainerCol.parksImgCol
+                    figure
+                        a(href="/parks/61")
+                            img.parksImage(src="/images/KnottsBerryFarm.png", alt="A Shot of an Attraction at Knott's Berry Farm")
+                            //- Image Source: https://www.sfgate.com/travel/article/first-visit-to-Knotts-Berry-Farm-17051398.php
+                        figCaption.parksCaption Knott's Berry Farm, Buena Park, CA 
+                    figure
+                        a(href="/parks/55")
+                            img.parksImage(src="/images/Dollywood.png", alt="The Dollywood Sign")
+                            //- Image Source: https://people.com/travel/dollywood-announces-they-will-pay-100-of-tuition-and-textook-costs-for-workers-at-tennessee-theme-park/
+                        figCaption.parksCaption Dollywood, Pigeon Forge, TN
+                    figure
+                        a(href="/parks/273")
+                            img.parksImage(src="/images/Blackpool.png", alt="Red and Blue Rollercoasters at Blackpool Pleasure Beach")
+                            //- Image Source: https://www.heraldscotland.com/news/national/uk-today/19596473.blackpool-pleasure-beach-big-win-uk-theme-park-awards/
+                        figCaption.parksCaption Blackpool Pleasure Beach, Lancashire, England
+                    figure
+                        a(href="/parks/29")
+                            img.parksImage(src="/images/SesamePlace.png", alt="A Parade at Sesame Place")
+                            //- Image Source: https://www.usatoday.com/story/travel/experience/america/theme-parks/2022/02/10/sesame-place-san-diego-opening-march-what-expect/6738078001/
+                        figCaption.parksCaption Sesame Place, Langhorne, PA 
+                    figure
+                        a(href="/parks/64")
+                            img.parksImage(src="/images/IslandsOfAdventure.png", alt="The Hulk coaster at Islands of Adventure")
+                            //- Image Source: https://www.visitorlando.com/things-to-do/theme-parks/universal-orlando-resort/universals-islands-of-adventure/
+                        figCaption.parksCaption Islands of Adventure, Orlando, FL
+                    figure
+                        a(href="/parks/58")
+                            img.parksImage(src="/images/CaliforniaAdventure.png", alt="A Nightshot of California Adventure's Ferris Wheel")
+                            //- Image Source: https://en.wikipedia.org/wiki/Disney_California_Adventure
+                        figCaption.parksCaption Disney California Adventure, Anaheim
+            main#mainParksCol 
+                ul#companyList
+                    each c in companies
+                        li.company 
+                            p.companyName #{c.name}
+                            ul.parkList
+                                each p in c.parks
+                                    li
+                                        a(href=`/parks/${p.id}`).park  #{p.name}
+                div.pageLink.flexContainer
+                    a(href="#listHeading").backLink Back to Top 
+                    a(href="/").backLink Back to Map
+            side#rightParksCol
+                div.flexContainerCol.parksImgCol
+                    figure
+                        a(href="/parks/9") 
+                            img.parksImage(src="/images/ParcAsterix.png", alt="Visitors of Parc Asterix going up a rollercoaster")
+                            //- Image Source: https://www.timeout.com/paris/en/things-to-do/attractions/parc-asterix
+                        figCaption.parksCaption Parc Asterix, Plailly, France
+                    figure
+                        a(href="/parks/1") 
+                            img.parksImage(src="/images/AltonTowers.png", alt="A Shot of a spiral roller coaster at Alton Towers")
+                            //- Image Source: https://visitbirmingham.com/things-to-see-and-do/alton-towers-p1325321
+                        figCaption.parksCaption Alton Towers, 	Alton, England
+                    figure
+                        a(href="/parks/302") 
+                            img.parksImage(src="/images/HolidayPark.png", alt="A Viking Boat Ride at Holiday Park")
+                            //- Image Source: https://coastertraveller.com/2021/07/12/holiday-park/
+                        figCaption.parksCaption Holiday Park, Hassloch, Germany
+                    figure
+                        a(href="/parks/281") 
+                            img.parksImage(src="/images/SixFlags.png", alt="A Shot of an orange and green roller coaster at Six Flags Darien Lake")
+                            //- Image Source: https://static.wikia.nocookie.net/sixflags/images/5/58/Tantrum.jpg/revision/latest?cb=20190512091434
+                        figCaption.parksCaption Six Flags Darien Lake, Corfu, NY
+                    figure
+                        a(href="/parks/45") 
+                            img.parksImage(src="/images/GreatEscape.png", alt="Ariel Shot of the Great Escape Theme Park")
+                            //- Image Source: https://wpdh.com/six-flags-great-escape-and-great-adventure-announce-opening-dates/
+                        figCaption.parksCaption The Great Escape, Queensbury, NY
+                    figure
+                        a(href="/parks/275")
+                            img.parksImage(src="/images/DisneySea.png", alt="A shot of Mt.Prometheus at Tokyo DisneySea")
+                            //- Image Source: https://en.wikipedia.org/wiki/Tokyo_DisneySea
+                        figCaption.parksCaption Tokyo DisneySea, Toyko, Japan
+
+//- block layoutContent
+//-     div.content#parksContent
+//-         h1.pageHeading#listHeading List of Amusement Parks
+//-         ul#companyList
+//-             each c in companies
+//-                 li.company 
+//-                     p.companyName #{c.name}
+//-                     ul.parkList
+//-                         each p in c.parks
+//-                             li
+//-                                 a(href=`/parks/${p.id}`).park  #{p.name}
+//-         div.pageLink.flexContainer
+//-             a(href="#listHeading").backLink Back to Top 
+//-             a(href="/").backLink Back to Map 
+
+    

@@ -1,0 +1,35 @@
+block variables
+doctype html 
+html
+    head
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width")
+        title #{title} | The Amazing AmuseMap
+        link(rel="stylesheet", type="text/css", href="/css/shared_styles.css")
+        link(rel="stylesheet", type="text/css", href="/css/index_styles.css")
+        link(rel="stylesheet", type="text/css", href="/css/parks_styles.css")
+        link(rel="stylesheet", type="text/css", href="/css/park_styles.css")
+        script(src="https://kit.fontawesome.com/b536528e9f.js", crossorigin="anonymous")
+        script(src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js")
+        script(src="/js/map.js")
+    body
+        header
+            div#headerFlex.flexContainer
+                div#mainLogo
+                    a(href="/")
+                        div.flexContainer
+                            div#logoBox
+                                h2#siteName The Amazing AmuseMap
+                                p#siteSlogan Tracking Wait Times Worldwide!    
+                            img#siteLogo(src="/images/LogoDesign.svg", alt="A Map Marker with a Ferris Wheel in the Centre")
+    
+                div#headerLinks
+                    a(href="/").headerLink Park Map
+                    a(href="/parks").headerLink Park List
+        
+        main#main
+            block layoutContent
+        footer#footer.flexContainer
+            p ©Joshua Devenyi 2022
+            p
+                a(href="https://queue-times.com") Powered by Queue-Times.com

@@ -1,0 +1,25 @@
+{
+  "name": "api_project",
+  "version": "1.0.0",
+  "description": "An app that uses APIs to show theme park wait times",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./index.js",
+    "ui": "browser-sync start --config bs-config.js",
+    "start": "node index.js"
+  },
+  "author": "Josh",
+  "license": "ISC",
+  "dependencies": {
+    "@googlemaps/markerclusterer": "^2.0.2",
+    "axios": "^0.26.1",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.2",
+    "pug": "^3.0.2",
+    "save": "^2.4.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.27.7",
+    "nodemon": "^2.0.15"
+  }
+}

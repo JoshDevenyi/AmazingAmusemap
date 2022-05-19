@@ -1,0 +1,42 @@
+extends layout
+
+block layoutContent
+    div.content#indexContent
+        h1#indexTitle The Amazing Amusemap
+        //- Used normal HTML for i tags to get icon on both sides of the main heading text
+        h2#indexHeading.pageHeading <i class="fab fa-fort-awesome"></i> Find an Amusement Park <i class="fab fa-fort-awesome"></i>
+        div#indexBox.flexContainer
+            aside#leftCol
+                div.flexContainerCol.imgCol
+                    figure
+                        a(href="/parks/58")
+                            img.indexImage(src="/images/Wonderland.png", alt="An Arial Shot of Canada's Wonderland")
+                            //- Image Source: https://www.blogto.com/sports_play/2020/07/canadas-wonderland-opening/
+                        figCaption Canada's Wonderland, Vaughan, ON
+                    figure
+                        a(href="/parks/6")
+                            img.indexImage(src="/images/DisneyWorld.png", alt="A picture of Main Street USA at Magic Kingdom Orlando")
+                            //- Image Source: https://people.com/travel/walt-disney-world-test-facial-recognition-technology-magic-kingdom-entrances-through-april/
+                        figCaption Disney's Magic Kingdom, Orlando, FL
+                        
+            main#mainCol           
+                div#centerContent.flexContainer
+                    div#map
+                script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzqdgKT_wNUIuzPuj699H7BwB4t5Qst1M&callback=initMap&v=weekly" async)
+                ul#indexData
+                    each c in companies
+                        each p in c.parks
+                            li.parkData {"name": "#{p.name}", "id": #{p.id}, "lat": #{p.latitude}, "lng": #{p.longitude} }
+            aside#rightCol
+                div.flexContainerCol.imgCol
+                    figure
+                        a(href="/parks/48") 
+                            img.indexImage(src="/images/LaRonde.png", alt="An Arial Shot of La Ronde Theme Park in Montreal")
+                            //- Image Source: http://www.chaletsansestehelene.com/la-ronde-montreal/
+
+                        figCaption La Ronde, Montreal, QC
+                    figure
+                        a(href="/parks/66") 
+                            img.indexImage(src="/images/UniversalStudios.png", alt="A Shot of the Silver Universal Globe in Hollywood")
+                            //- Image Source: https://www.universalstudioshollywood.com/web/en/us/activity-center
+                        figCaption Universal Studios, Los Angeles, CA
